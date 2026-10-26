@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ساعات مؤمل | MUAMMAL WATCHES</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Amiri & Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,700;1,400&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#d4af37',
+                            600: '#b8860b',
+                            700: '#9a6a11'
+                        },
+                        navy: {
+                            800: '#111827',
+                            900: '#0b0f19',
+                            950: '#030611',
+                        }
+                    },
+                    fontFamily: {
+                        amiri: ['Amiri', 'serif'],
+                        tajawal: ['Tajawal', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 3s infinite alternate',
+                        'float': 'float 4s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%': { boxShadow: '0 0 15px rgba(212, 175, 55, 0.2)' },
+                            '100%': { boxShadow: '0 0 30px rgba(212, 175, 55, 0.5)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-6px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #030611;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .luxury-font {
+            font-family: 'Amiri', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef08a 25%, #d4af37 60%, #9a6a11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .gold-border-glow {
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+        }
+        .luxury-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .luxury-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px -10px rgba(212, 175, 55, 0.25);
+            border-color: rgba(212, 175, 55, 0.8);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030611;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #d4af37, #9a6a11);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-gold-500 selection:text-black">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-[#030611]/90 backdrop-blur-lg border-b gold-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="w-12 h-12 rounded-2xl border gold-border flex items-center justify-center bg-gold-500/10 shadow-lg shadow-gold-500/10 animate-float">
+                    <i class="fa-solid fa-clock text-gold-500 text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold luxury-font gold-gradient-text tracking-wide">ساعات مؤمل</h1>
+                    <p class="text-[10px] text-amber-200/60 tracking-widest uppercase font-semibold">MUAMMAL WATCHES</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-3">
+                <!-- Social links in Header -->
+                <div class="hidden md:flex items-center gap-2">
+                    <a href="https://instagram.com/muammal_watches" target="_blank" rel="noopener noreferrer" title="Instagram" class="w-9 h-9 rounded-xl border gold-border flex items-center justify-center bg-purple-950/40 text-pink-400 hover:text-white hover:border-pink-500 transition">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                    </a>
+                    <a href="https://tiktok.com/@muammal_watches" target="_blank" rel="noopener noreferrer" title="TikTok" class="w-9 h-9 rounded-xl border gold-border flex items-center justify-center bg-black/60 text-gold-400 hover:text-white hover:border-gold-400 transition">
+                        <i class="fa-brands fa-tiktok text-sm"></i>
+                    </a>
+                </div>
+                
+                <div class="text-xs text-black bg-gradient-to-r from-gold-400 to-gold-600 px-4 py-2 rounded-xl font-extrabold shadow-md flex items-center gap-1.5">
+                    <i class="fa-solid fa-tag"></i>
+                    <span>10,000 د.ع</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+        
+        <!-- Hero Section -->
+        <div class="text-center mb-12 relative">
+            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-96 h-32 bg-gold-500/10 blur-3xl pointer-events-none rounded-full"></div>
+            
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border gold-border text-gold-400 text-xs font-bold mb-4 shadow-sm">
+                <i class="fa-solid fa-crown text-gold-500"></i>
+                <span>أرقى الماركات العالمية بتصميم متميز وسعر موحد</span>
+            </div>
+            <h2 class="text-3xl sm:text-6xl font-bold luxury-font mb-4 tracking-wide text-white">تشكيلة الساعات الفاخرة</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base font-light mb-8 leading-relaxed">
+                استعرض أرقى موديلات الساعات العالمية (رولكس، كاسيو، تيسوت) مع معاينة مرئية عالية الدقة (فيديو وصور) لكل قطعة. اختَر ساعتك المفضلة واحجزها مباشرة عبر حساباتنا.
+            </p>
+            
+            <!-- Direct Contact Box -->
+            <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-4 bg-navy-900/90 border gold-border px-6 py-4 rounded-2xl shadow-2xl backdrop-blur-md">
+                <span class="text-xs text-gray-300 font-medium">للتواصل والحجز المباشر عبر الحسابات الرسمية:</span>
+                <div class="flex flex-wrap items-center justify-center gap-3">
+                    <a href="https://instagram.com/muammal_watches" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gold-400 hover:text-white text-xs font-bold bg-purple-950/40 border border-purple-500/40 px-4 py-2 rounded-xl transition hover:scale-105 shadow-md">
+                        <i class="fa-brands fa-instagram text-pink-500 text-sm"></i>
+                        <span>@muammal_watches</span>
+                    </a>
+                    <a href="https://tiktok.com/@muammal_watches" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gold-400 hover:text-white text-xs font-bold bg-black/60 border gold-border px-4 py-2 rounded-xl transition hover:scale-105 shadow-md">
+                        <i class="fa-brands fa-tiktok text-gold-400 text-sm"></i>
+                        <span>@muammal_watches</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 bg-navy-900/70 p-4 rounded-2xl border gold-border backdrop-blur-md shadow-xl">
+            <!-- Brand Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 w-full md:w-auto">
+                <button onclick="filterWatches('all')" id="btn-all" class="px-5 py-2.5 rounded-xl text-xs font-bold transition duration-300 bg-gold-500 text-black shadow-lg shadow-gold-500/20">
+                    الكل (12)
+                </button>
+                <button onclick="filterWatches('رولكس (Rolex)')" id="btn-rolex" class="px-5 py-2.5 rounded-xl text-xs font-bold transition duration-300 bg-navy-950 text-gray-300 border gold-border/40 hover:border-gold-500">
+                    رولكس (Rolex)
+                </button>
+                <button onclick="filterWatches('كاسيو (Casio)')" id="btn-casio" class="px-5 py-2.5 rounded-xl text-xs font-bold transition duration-300 bg-navy-950 text-gray-300 border gold-border/40 hover:border-gold-500">
+                    كاسيو (Casio)
+                </button>
+                <button onclick="filterWatches('تيسوت (Tissot)')" id="btn-tissot" class="px-5 py-2.5 rounded-xl text-xs font-bold transition duration-300 bg-navy-950 text-gray-300 border gold-border/40 hover:border-gold-500">
+                    تيسوت (Tissot)
+                </button>
+            </div>
+
+            <!-- Search Input -->
+            <div class="relative w-full md:w-72">
+                <span class="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none text-gold-500/70">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input type="text" id="searchInput" oninput="searchWatches()" placeholder="ابحث عن موديل الساعة..." class="w-full bg-navy-950 border gold-border text-white text-xs rounded-xl pr-10 pl-4 py-2.5 focus:outline-none focus:border-gold-500 placeholder-gray-500 transition">
+            </div>
+        </div>
+
+        <!-- Watches Grid -->
+        <div id="watchesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamic Watch Cards Inserted via JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="noResults" class="hidden text-center py-20 bg-navy-900/40 rounded-3xl border gold-border my-8">
+            <div class="w-16 h-16 bg-gold-500/10 rounded-full border gold-border flex items-center justify-center mx-auto mb-4 text-gold-400 text-2xl">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">عذراً، لم نجد نتائج مطابقة</h3>
+            <p class="text-gray-400 text-sm">جرب البحث بكلمات أخرى أو اختر ماركة مختلفة من القائمة أعلاه.</p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 border-t gold-border py-12 mt-16 relative">
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+            <div class="w-12 h-12 rounded-2xl border gold-border flex items-center justify-center bg-gold-500/10 mx-auto mb-4">
+                <i class="fa-solid fa-clock text-gold-500 text-xl"></i>
+            </div>
+            <p class="luxury-font text-3xl gold-gradient-text mb-2">ساعات مؤمل - MUAMMAL WATCHES</p>
+            <p class="text-gray-300 font-medium mb-6 text-sm">السعر الموحد لجميع القطع الفاخرة: <span class="text-gold-400 font-extrabold text-base">10,000 دينار عراقي</span></p>
+            
+            <div class="flex flex-wrap justify-center items-center gap-4 my-6">
+                <a href="https://instagram.com/muammal_watches" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    <span class="font-bold text-xs">تابعنا على إنستغرام</span>
+                </a>
+                <a href="https://tiktok.com/@muammal_watches" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-black border gold-border text-white px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition">
+                    <i class="fa-brands fa-tiktok text-lg text-gold-400"></i>
+                    <span class="font-bold text-xs text-gold-400">تابعنا على تيك توك</span>
+                </a>
+            </div>
+
+            <p class="text-gray-500 text-xs mt-8">جميع حقوق العرض والتصميم محفوظة © 2026 | ساعات مؤمل</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for HD Media Preview -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 left-6 text-gold-400 bg-gold-500/10 border gold-border hover:bg-gold-500/20 w-11 h-11 rounded-full flex items-center justify-center text-xl transition">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl w-full bg-navy-900 border gold-border rounded-3xl p-6 relative flex flex-col items-center shadow-2xl">
+            <div class="flex items-center gap-2 mb-4">
+                <i class="fa-solid fa-crown text-gold-500"></i>
+                <h3 id="lightboxTitle" class="text-xl font-bold text-gold-400 luxury-font"></h3>
+            </div>
+            <div id="lightboxContent" class="w-full flex items-center justify-center max-h-[70vh] overflow-hidden rounded-2xl bg-black/60 p-2 border gold-border/30">
+                <!-- Dynamically filled image/video -->
+            </div>
+            <p class="text-gray-400 text-xs mt-4">معاينة عالية الدقة والوضوح للساعة الفاخرة</p>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        const watches = [
+            // Rolex Models
+            {
+                id: 1,
+                brandName: "رولكس (Rolex)",
+                model: "Rolex Submariner Gold & Black",
+                price: 10000,
+                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80",
+                video: "https://assets.mixkit.co/videos/preview/mixkit-luxury-watch-close-up-rotation-41584-large.mp4"
+            },
+            {
+                id: 2,
+                brandName: "رولكس (Rolex)",
+                model: "Rolex Daytona Classic Gold",
+                price: 10000,
+                image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800&auto=format&fit=crop&q=80",
+                video: "https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-wearing-a-luxury-watch-41585-large.mp4"
+            },
+            {
+                id: 3,
+                brandName: "رولكس (Rolex)",
+                model: "Rolex Oyster Perpetual Silver",
+                price: 10000,
+                image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&auto=format&fit=crop&q=80",
+                video: "https://assets.mixkit.co/videos/preview/mixkit-luxury-watch-close-up-rotation-41584-large.mp4"
+            },
+            {
+                id: 4,
+                brandName: "رولكس (Rolex)",
+                model: "Rolex Datejust President",
+                price: 10000,
+                image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&auto=format&fit=crop&q=80",
+                video: "https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-wearing-a-luxury-watch-41585-large.mp4"
+            },
+            
+            // Casio Models
+            {
+                id: 5,
+                brandName: "كاسيو (Casio)",
+                model: "Casio G-Shock Matte Black",
+                price: 10000,
+                image: "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=800&auto=format&fit=crop&q=80",
+                video: "https://assets.mixkit.co/videos/preview/mixkit-luxury-watch-close-up-rotation-41584-large.mp4"
+            },
+            {
+                id: 6,
+                brandName: "كاسيو (Casio)",
+                model: "Casio Edifice Chronograph",
+                price: 10000,
+                image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop&q=80",
+                video: "https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-wearing-a-luxury-watch-41585-large.mp4"
+            },
+            {
+                id: 7,
+                brandName: "كاسيو (Casio)",
+                model: "Casio Vintage Icon Gold",
+                price: 10000,
+                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80",
+                video: "https://assets.mixkit.co/videos/preview/mixkit-luxury-watch-close-up-rotation-41584-large.mp4"
+            },
+            {
+                id: 8,
+                brandName: "كاسيو (Casio)",
+                model: "Casio Building Tough Solar",
+                price: 10000,
+                image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800&auto=format&fit=crop&q=80",
+                video: "https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-wearing-a-luxury-watch-41585-large.mp4"
+            },
+
+            // Tissot Models
+            {
+                id: 9,
+                brandName: "تيسوت (Tissot)",
+                model: "Tissot PRX Powermatic 80",
+                price: 10000,
+                image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&auto=format&fit=crop&q=80",
+                video: "https://assets.mixkit.co/videos/preview/mixkit-luxury-watch-close-up-rotation-41584-large.mp4"
+            },
+            {
+                id: 10,
+                brandName: "تيسوت (Tissot)",
+                model: "Tissot Le Locle Automatic",
+                price: 10000,
+                image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop&q=80",
+                video: "https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-wearing-a-luxury-watch-41585-large.mp4"
+            },
+            {
+                id: 11,
+                brandName: "تيسوت (Tissot)",
+                model: "Tissot Heritage Classic",
+                price: 10000,
+                image: "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=800&auto=format&fit=crop&q=80",
+                video: "https://assets.mixkit.co/videos/preview/mixkit-luxury-watch-close-up-rotation-41584-large.mp4"
+            },
+            {
+                id: 12,
+                brandName: "تيسوت (Tissot)",
+                model: "Tissot Gentleman Elegance",
+                price: 10000,
+                image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&auto=format&fit=crop&q=80",
+                video: "https://assets.mixkit.co/videos/preview/mixkit-luxury-watch-close-up-rotation-41584-large.mp4"
+            }
+        ];
+
+        let currentFilter = 'all';
+
+        function renderWatches(list) {
+            const grid = document.getElementById('watchesGrid');
+            const noResults = document.getElementById('noResults');
+
+            if (list.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            noResults.classList.add('hidden');
+            grid.innerHTML = list.map(watch => `
+                <div class="bg-navy-900/80 border gold-border rounded-3xl overflow-hidden luxury-card flex flex-col justify-between shadow-xl">
+                    <!-- Dual Media Section -->
+                    <div class="grid grid-cols-2 bg-black/50 border-b gold-border/40 relative overflow-hidden">
+                        <span class="absolute top-3 right-3 bg-navy-950/90 border gold-border text-gold-400 text-[10px] font-bold px-3 py-1 rounded-full shadow-md z-10 backdrop-blur-sm">
+                            ${watch.brandName}
+                        </span>
+                        
+                        <!-- Image Container -->
+                        <div class="h-56 flex items-center justify-center p-3 border-l gold-border/20 bg-black/20 cursor-pointer group relative" onclick="openLightbox('image', '${watch.image}', '${watch.model}')">
+                            <img src="${watch.image}" alt="${watch.model}" class="max-h-full object-contain transform group-hover:scale-110 transition duration-500 drop-shadow-2xl" loading="lazy">
+                            <span class="absolute bottom-2 right-2 bg-black/70 text-[9px] text-gray-300 px-2 py-0.5 rounded-md border gold-border/30 opacity-80 group-hover:opacity-100 transition">
+                                <i class="fa-solid fa-expand text-[8px] ml-1"></i>صورة
+                            </span>
+                        </div>
+                        
+                        <!-- Video Preview Container -->
+                        <div class="h-56 flex items-center justify-center bg-black/40 relative cursor-pointer group" onclick="openLightbox('video', '${watch.video}', '${watch.model}')">
+                            <video src="${watch.video}" autoplay loop muted playsinline class="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-300"></video>
+                            <span class="absolute bottom-2 left-2 bg-black/70 text-[9px] text-gold-400 px-2 py-0.5 rounded-md border gold-border/30 opacity-80 group-hover:opacity-100 transition">
+                                <i class="fa-solid fa-circle-play text-[8px] ml-1"></i>فيديو
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Info -->
+                    <div class="p-5 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="font-bold text-white text-base mb-3 text-center leading-snug">${watch.model}</h3>
+                        </div>
+                        <div class="border-t gold-border/30 pt-4 mt-2 flex items-center justify-between">
+                            <span class="text-xs text-gray-400 font-medium">السعر الموحد</span>
+                            <span class="text-lg font-black text-gold-400">${watch.price.toLocaleString()} د.ع</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterWatches(brand) {
+            currentFilter = brand;
+            
+            // Update active buttons style
+            ['all', 'رولكس (Rolex)', 'كاسيو (Casio)', 'تيسوت (Tissot)'].forEach(b => {
+                const btnId = b === 'all' ? 'btn-all' : b.includes('Rolex') ? 'btn-rolex' : b.includes('Casio') ? 'btn-casio' : 'btn-tissot';
+                const btn = document.getElementById(btnId);
+                if ((b === 'all' && brand === 'all') || brand === b) {
+                    btn.className = "px-5 py-2.5 rounded-xl text-xs font-bold transition duration-300 bg-gold-500 text-black shadow-lg shadow-gold-500/20";
+                } else {
+                    btn.className = "px-5 py-2.5 rounded-xl text-xs font-bold transition duration-300 bg-navy-950 text-gray-300 border gold-border/40 hover:border-gold-500";
+                }
+            });
+
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            applyFilters(brand, query);
+        }
+
+        function searchWatches() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            applyFilters(currentFilter, query);
+        }
+
+        function applyFilters(brand, query) {
+            let filtered = watches;
+            if (brand !== 'all') {
+                filtered = filtered.filter(w => w.brandName === brand);
+            }
+            if (query.trim() !== '') {
+                filtered = filtered.filter(w => w.model.toLowerCase().includes(query) || w.brandName.toLowerCase().includes(query));
+            }
+            renderWatches(filtered);
+        }
+
+        // Lightbox Handler Functions
+        function openLightbox(type, src, title) {
+            const modal = document.getElementById('lightboxModal');
+            const titleEl = document.getElementById('lightboxTitle');
+            const contentEl = document.getElementById('lightboxContent');
+            
+            titleEl.textContent = title;
+            if (type === 'image') {
+                contentEl.innerHTML = `<img src="${src}" alt="${title}" class="max-h-[65vh] object-contain rounded-xl">`;
+            } else {
+                contentEl.innerHTML = `<video src="${src}" autoplay loop controls playsinline class="max-h-[65vh] w-full rounded-xl"></video>`;
+            }
+            modal.classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightboxModal').classList.add('hidden');
+        }
+
+        // Initial render on load
+        window.onload = function() {
+            renderWatches(watches);
+        };
+    </script>
+</body>
+</html>
